@@ -1,0 +1,11 @@
+alns/
+reseek_search/
+scop40pdb/
+blast_binaries/
+foldseek_search/
+bin/
+reseek_db/
+foldseek_db/
+blastp_search/
+blastdb/
+foldseek_tmp/
