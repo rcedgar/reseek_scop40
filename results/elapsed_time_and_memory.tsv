@@ -1,0 +1,9 @@
+time	mem	method
+2:07.23	36804	blastp_search
+0:14.67	182876	foldseek_createdb
+1:18.56	1866780	foldseek_search
+0:18.75	2238976	reseek_pdb2cal
+0:45.90	309224	reseek-fast
+1:33.18	341912	reseek-sensitive
+0:13.65	371384	reseek-veryfast
+13:08.02	414208	reseek-verysensitive
