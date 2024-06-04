@@ -13,10 +13,11 @@ do
 		  -log $mode.search.log
 done
 
+mode=verysensitive
 /bin/time -v -o $mode.time \
 	../bin/reseek \
 	  -search ../reseek_db/scop40.cal \
 	  -verysensitive \
 	  -evalue 99999 \
-	  -output verysensitive.tsv \
-	  -log verysensitive.search.log
+	  -output $mode.tsv \
+	  -log $mode.search.log

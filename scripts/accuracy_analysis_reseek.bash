@@ -7,11 +7,11 @@ for algo in veryfast fast sensitive verysensitive
 do
 	for mode in ignore family fold
 	do
-		out=reseek-$algo.$mode.txt
+		out=reseek-${algo}_$mode.txt
 		if [ ! -s $out ] ; then
 			sort -gk1 ../reseek_search/$algo.tsv \
 			  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
-			  > reseek-${algo}_$mode.txt
+			  > $out
 		fi
 		ls -lh $out
 	done

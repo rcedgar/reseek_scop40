@@ -3,9 +3,11 @@ reseek_search/
 scop40pdb/
 blast_binaries/
 foldseek_search/
+gtalign_output/
 bin/
 reseek_db/
 foldseek_db/
 blastp_search/
 blastdb/
 foldseek_tmp/
+gtalign_v0.15.0/

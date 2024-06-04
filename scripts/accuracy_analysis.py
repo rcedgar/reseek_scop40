@@ -161,6 +161,7 @@ tpr_at_fpepq0_1 = -1
 tpr_at_fpepq1 = -1
 tpr_at_fpepq10 = -1
 prev_line = None
+score = 0
 for line in sys.stdin:
 	fields = line[:-1].split('\t')
 	q = fields[qfldnr-1]
