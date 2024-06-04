@@ -9,7 +9,7 @@ do
 	do
 		out=devreseek-${algo}_$mode.txt
 		if [ ! -s $out ] ; then
-			sort -gk1 ../reseek_search/dev$algo.tsv \
+			sort -gk1 ../devreseek_search/dev$algo.tsv \
 			  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
 			  > $out
 		fi

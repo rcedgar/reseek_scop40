@@ -1,12 +1,12 @@
 #!/bin/bash -e
 
-mkdir -p ../reseek_search
-cd ../reseek_search
+mkdir -p ../devreseek_search
+cd ../devreseek_search
 
 for mode in veryfast fast sensitive
 do
 	/bin/time -v -o dev$mode.time \
-		../bin/reseekdev \
+		$src/reseek/bin/reseek \
 		  -search ../reseek_db/scop40.cal \
 		  -$mode \
 		  -output dev$mode.tsv \
@@ -15,7 +15,7 @@ done
 
 mode=verysensitive
 /bin/time -v -o dev$mode.time \
-	../bin/reseekdev \
+	$src/reseek/bin/reseek \
 	  -search ../reseek_db/scop40.cal \
 	  -evalue 99999 \
 	  -verysensitive \
