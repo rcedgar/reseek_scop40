@@ -1,22 +1,15 @@
-NrDoms=11211 # number of domains
-NrSingletons=838 # number of singleton domains
-NT=454766 # total possible TPs
-NF=125220544 # total possible FPs
-TPR+FPEPQ	0.0100	0	6.73e-29
-TPR+FPEPQ	0.0200	0	6.05e-19
-TPR+FPEPQ	0.0300	0	3.88e-13
-TPR+FPEPQ	0.0400	0.0001784	1.61e-09
-TPR+FPEPQ	0.0500	0.0005352	4.09e-07
-TPR+FPEPQ	0.0600	0.001962	2.51e-05
-TPR+FPEPQ	0.0700	0.005084	0.000615
-TPR+FPEPQ	0.0800	0.02301	0.008
-TPR+FPEPQ	0.0900	0.09972	0.06
-TPR+FPEPQ	0.1000	0.4064	0.31
-TPR+FPEPQ	0.1100	1.335	1.2
-TPR+FPEPQ	0.1200	3.656	4.1
-TPR+FPEPQ	0.1290	7.646	10
-tpr_at_fpepq0_1=0.0900
-tpr_at_fpepq1=0.1075
+nrdoms=11211 # number of domains
+nrsingletons=473 # number of singleton domains
+NT=1036538 # total possible TPs
+NF=124638772 # total possible FPs
+TPR+FPEPQ	0.0100	0	5.92e-17
+TPR+FPEPQ	0.0200	0	4.37e-08
+TPR+FPEPQ	0.0300	0.002141	0.00038
+TPR+FPEPQ	0.0400	0.1047	0.071
+TPR+FPEPQ	0.0500	1.821	1.8
+TPR+FPEPQ	0.0576	7.55	10
+tpr_at_fpepq0_1=0.0398
+tpr_at_fpepq1=0.0475
 tpr_at_fpepq10=-1.0000
-nrtps_to_firstfp=46860
-sens_to_firstfp=0.1030
+nrtps_to_firstfp=47268
+sens_to_firstfp=0.0456

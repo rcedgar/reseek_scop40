@@ -3,7 +3,7 @@
 mkdir -p ../accuracy_analysis
 cd ../accuracy_analysis
 
-for mode in ignore family fold
+for mode in ignore sf fold
 do
 	out=blastp_$mode.txt
 	if [ ! -s $out ] ; then

@@ -5,7 +5,7 @@ cd ../accuracy_analysis
 
 for algo in veryfast fast sensitive verysensitive
 do
-	for mode in ignore family fold
+	for mode in ignore sf fold
 	do
 		out=devreseek-${algo}_$mode.txt
 		if [ ! -s $out ] ; then

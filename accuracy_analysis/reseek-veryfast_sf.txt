@@ -1,5 +1,5 @@
-NrDoms=11211 # number of domains
-NrSingletons=838 # number of singleton domains
+nrdoms=11211 # number of domains
+nrsingletons=838 # number of singleton domains
 NT=454766 # total possible TPs
 NF=125220544 # total possible FPs
 TPR+FPEPQ	0.0015	0.9339	694
