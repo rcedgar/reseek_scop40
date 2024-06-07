@@ -3,7 +3,7 @@
 mkdir -p ../accuracy_analysis
 cd ../accuracy_analysis
 
-for algo in veryfast fast sensitive verysensitive
+for algo in fast sensitive
 do
 	for mode in ignore sf fold
 	do

@@ -6,10 +6,12 @@ cd ../accuracy_analysis
 for mode in ignore sf fold
 do
 	out=foldseek_$mode.txt
-	if [ ! -s $out ] ; then
+	if [ -s $out ] ; then
+		echo "Already done $out"
+	else
 		sort -gk11 ../foldseek_search/foldseek.tsv \
 		  | python3 ../scripts/accuracy_analysis.py 1 2 11 e $mode \
 		  > $out
-	ls -lh $out
+		ls -lh $out
 	fi
 done

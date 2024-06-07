@@ -50,7 +50,7 @@ sf2doms = {}
 fold2doms = {}
 dom2sf = {}
 dom2fold = {}
-for line in open("../data/scop_lookup.tsv"):
+for line in open("../data/scop_lookup.fix.tsv"):
     flds = line[:-1].split('\t')
     assert len(flds) == 2
     dom = flds[0]
@@ -238,15 +238,21 @@ for line in sys.stdin:
         tprt += tpstep
     last_score = score
 
+if tpr_at_fpepq0_1 == -1:
+    tpr_at_fpepq0_1 = tpr
+
+if tpr_at_fpepq1 == -1:
+    tpr_at_fpepq1 = tpr
+
+if tpr_at_fpepq10 == -1:
+    tpr_at_fpepq10 = tpr
+    
 nrhits = len(qs)
 assert len(tps) == nrhits
 
 tpr = float(ntp)/NT
 fpepq = float(nfp)/nrdoms
 print(f"TPR+FPEPQ\t%.4f\t%.4g\t%.4g" % (tpr, fpepq, score))
-print("tpr_at_fpepq0_1=%.4f" % tpr_at_fpepq0_1)
-print("tpr_at_fpepq1=%.4f" % tpr_at_fpepq1)
-print("tpr_at_fpepq10=%.4f" % tpr_at_fpepq10)
 
 for i in range(nrhits):
     score = scores[i]
@@ -267,5 +273,16 @@ for i in range(nrhits):
 
 # Foldseek paper definition of sensitivity
 sens_to_firstfp = float(nrtps_to_firstfp)/NT
-print("nrtps_to_firstfp=%d" % nrtps_to_firstfp)
-print("sens_to_firstfp=%.4f" % sens_to_firstfp)
+
+# print("tpr_at_fpepq0_1=%.4f" % tpr_at_fpepq0_1)
+# print("tpr_at_fpepq1=%.4f" % tpr_at_fpepq1)
+# print("tpr_at_fpepq10=%.4f" % tpr_at_fpepq10)
+# print("nrtps_to_firstfp=%d" % nrtps_to_firstfp)
+# print("sens_to_firstfp=%.4f" % sens_to_firstfp)
+
+Summary = "SEPQ0.1=%.4f" % tpr_at_fpepq0_1
+Summary += "\tSEPQ1=%.4f" % tpr_at_fpepq1
+Summary += "\tSEPQ10=%.4f" % tpr_at_fpepq10
+Summary += "\tS1FP=%.4f" % sens_to_firstfp
+Summary += "\tlevel=%s" % level
+print(Summary)
