@@ -3,12 +3,9 @@ NrSingletons=2236 # number of singleton domains
 NT=108718 # total possible TPs
 NF=125220544 # total possible FPs
 NI=346048 # number of ignored pairs
-TPR+FPEPQ	0.0100	0	0.00101
-TPR+FPEPQ	0.0200	0	0.0127
-TPR+FPEPQ	0.0300	0.008295	3.33
-TPR+FPEPQ	0.0306	0.1111	10
-tpr_at_fpepq0_1=0.0306
+TPR+FPEPQ	0.0044	0.9339	694
+tpr_at_fpepq0_1=0.0044
 tpr_at_fpepq1=-1.0000
 tpr_at_fpepq10=-1.0000
-nrtps_to_firstfp=3324
-sens_to_firstfp=0.0306
+nrtps_to_firstfp=478
+sens_to_firstfp=0.0044

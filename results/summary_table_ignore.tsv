@@ -1,12 +1,13 @@
 Sens0.1_ig	Sens1_ig	Sens10_ig	Sens1FP_ig	Secs	Mb	Method
 0.0044	-	-	0.0044	5	359.0	reseek-veryfast
-0.0306	-	-	0.0306	13	347.0	devreseek-veryfast
+0.0044	-	-	0.0044	5	338.0	devreseek-veryfast
+0.1717	0.3458	0.7072	0.7873	-	-	DALI
 0.2644	0.3070	-	0.2973	127	35.0	blastp
 0.2461	0.4699	0.7147	0.7234	78	1823.0	foldseek
 0.3259	0.5696	0.7709	0.7784	-	-	TMalign
 0.4468	0.6183	0.7842	0.7826	794	420.0	reseek-verysensitive
-0.4468	0.6183	0.7842	0.7826	-	-	devreseek-verysensitive
+0.4468	0.6183	0.7842	0.7826	851	412.0	devreseek-verysensitive
 0.4529	0.6005	0.7019	0.6860	46	308.0	reseek-fast
-0.4529	0.6005	-	0.6574	47	307.0	devreseek-fast
+0.4529	0.6005	0.7019	0.6860	46	312.0	devreseek-fast
 0.4597	0.6218	0.7502	0.7349	93	339.0	reseek-sensitive
-0.4597	0.6218	0.7502	0.7025	855	411.0	devreseek-sensitive
+0.4597	0.6218	0.7502	0.7349	96	340.0	devreseek-sensitive

@@ -2,7 +2,7 @@
 
 import sys
 
-algos = [ "TMalign", "blastp", "foldseek" ]
+algos = [ "TMalign", "blastp", "foldseek", "DALI" ]
 algos += [ "reseek-veryfast", "reseek-fast", "reseek-sensitive", "reseek-verysensitive" ]
 algos += [ "devreseek-veryfast", "devreseek-fast", "devreseek-sensitive", "devreseek-verysensitive" ]
 bs = [ "ignore", "family", "fold" ]

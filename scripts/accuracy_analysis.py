@@ -135,7 +135,6 @@ dom2score_firstfp = {}
 for dom in doms:
 	dom2score_firstfp[dom] = low_score
 
-
 print(f"{NrDoms=} # number of domains")
 print(f"{NrSingletons=} # number of singleton domains")
 print(f"{NT=} # total possible TPs")
