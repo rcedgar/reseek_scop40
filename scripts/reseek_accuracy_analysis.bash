@@ -8,11 +8,9 @@ do
 	for mode in ignore sf fold
 	do
 		out=reseek-${algo}_$mode.txt
-		if [ ! -s $out ] ; then
-			sort -gk1 ../reseek_search/$algo.tsv \
-			  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
-			  > $out
-		fi
+		sort -gk1 ../reseek_search/$algo.tsv \
+		  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
+		  > $out
 		ls -lh $out
 	done
 done
