@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import sys
-# from operator import itemgetter
 
 qfldnr = int(sys.argv[1])
 tfldnr = int(sys.argv[2])
@@ -274,15 +273,16 @@ for i in range(nrhits):
 # Foldseek paper definition of sensitivity
 sens_to_firstfp = float(nrtps_to_firstfp)/NT
 
-# print("tpr_at_fpepq0_1=%.4f" % tpr_at_fpepq0_1)
-# print("tpr_at_fpepq1=%.4f" % tpr_at_fpepq1)
-# print("tpr_at_fpepq10=%.4f" % tpr_at_fpepq10)
-# print("nrtps_to_firstfp=%d" % nrtps_to_firstfp)
-# print("sens_to_firstfp=%.4f" % sens_to_firstfp)
+print("tpr_at_fpepq0_1=%.4f" % tpr_at_fpepq0_1)
+print("tpr_at_fpepq1=%.4f" % tpr_at_fpepq1)
+print("tpr_at_fpepq10=%.4f" % tpr_at_fpepq10)
+print("nrtps_to_firstfp=%d" % nrtps_to_firstfp)
+print("sens_to_firstfp=%.4f" % sens_to_firstfp)
 
 Summary = "SEPQ0.1=%.4f" % tpr_at_fpepq0_1
 Summary += "\tSEPQ1=%.4f" % tpr_at_fpepq1
 Summary += "\tSEPQ10=%.4f" % tpr_at_fpepq10
 Summary += "\tS1FP=%.4f" % sens_to_firstfp
+Summary += "\tN1FP=%u" % nrtps_to_firstfp
 Summary += "\tlevel=%s" % level
 print(Summary)

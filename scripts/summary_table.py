@@ -5,7 +5,7 @@ import sys
 algos = [ "TMalign", "blastp", "foldseek", "DALI" ]
 algos += [ "reseek-veryfast", "reseek-fast", "reseek-sensitive", "reseek-verysensitive" ]
 algos += [ "devreseek-veryfast", "devreseek-fast", "devreseek-sensitive", "devreseek-verysensitive" ]
-bs = [ "ignore", "sf", "fold" ]
+bs = [ "sf", "fold" ]
 
 '''
     Elapsed (wall clock) time (h:mm:ss or m:ss): 2:07.23
@@ -115,7 +115,7 @@ def print_row(f, b, algo):
     row += "\t" + algo
     f.write(row + "\n")
 
-b2short = { "ignore" : "ig", "fold" : "fld", "family" : "fam" }
+b2short = { "fold" : "fld", "family" : "fam" }
 for b in bs:
     f = open("../results/summary_table_" + b + ".tsv", "w")
     shortb = b2short[b]

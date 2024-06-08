@@ -5,7 +5,7 @@ cd ../accuracy_analysis
 
 for algo in fast sensitive
 do
-	for mode in ignore sf fold
+	for mode in sf fold
 	do
 		out=reseek-${algo}_$mode.txt
 		sort -gk1 ../reseek_search/$algo.tsv \

@@ -5,13 +5,11 @@
 mkdir -p ../accuracy_analysis
 cd ../accuracy_analysis
 
-for mode in ignore sf fold
+for mode in sf fold
 do
 	out=DALI_$mode.txt
-	if [ ! -s $out ] ; then
-		sort -rgk3 ../alns/dali.txt \
-		  | python3 ../scripts/accuracy_analysis.py 1 2 3 s $mode \
-		  > DALI_$mode.txt
-	fi
+	sort -rgk3 ../alns/dali.txt \
+	  | python3 ../scripts/accuracy_analysis.py 1 2 3 s $mode \
+	  > DALI_$mode.txt
 	ls -lh $out
 done
