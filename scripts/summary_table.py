@@ -2,7 +2,7 @@
 
 import sys
 
-algos = [ "TMalign", "blastp", "DALI", "foldseek", "devreseek-fast" ]
+algos = [ "TMalign", "GTalign", "blastp", "DALI", "foldseek", "devreseek-fast" ]
 bs = [ "sf", "fold" ]
 
 '''
