@@ -3,10 +3,19 @@
 import sys
 
 minfpepq = 0.01
-maxfpepq = 10
 step = 0.1
 
-fns = sys.argv[1:]
+# fns = sys.argv[1:]
+level = sys.argv[1]
+
+if level == "sf":
+    maxfpepq = 10
+elif level == "fold":
+    maxfpepq = 1000
+else:
+    assert False, "Bad level=" + level
+
+methods = [ "blastp", "DALI", "TMalign", "foldseek", "devreseek-fast", "devreseek-sensitive" ]
 
 '''
 NrDoms=11211 # number of domains
@@ -19,8 +28,10 @@ TPR+FPEPQ       0.0300  0.1655  32.3
 TPR+FPEPQ       0.0400  0.2258  30.6
 TPR+FPEPQ       0.0500  0.2915  29
 '''
-
-def dofile(fn):
+maxk = 0
+def domethod(method):
+    global maxk
+    fn = "../accuracy_analysis/" + method + "_" + level + ".txt"
     fpepqs = []
     for k in range(0, 101):
         fpepqs.append(None) 
@@ -36,13 +47,14 @@ def dofile(fn):
         if k >= 1 and k <= 100:
             fpepq = float(flds[2])
             fpepqs[k] = fpepq
+            if fpepq <= maxfpepq:
+                maxk = max(maxk, k)
     return fpepqs
 
 name2fpepqs = {}
-for fn in fns:
-    fpepqs = dofile(fn)
-    name = fn.replace(".txt", "")
-    name2fpepqs[name] = fpepqs
+for method in methods:
+    fpepqs = domethod(method)
+    name2fpepqs[method] = fpepqs
 
 names = list(name2fpepqs.keys())
 hdrline = "fpepq"
@@ -50,7 +62,7 @@ for name in names:
     hdrline += "\t" + name
 print(hdrline)
 
-for k in range(1, 101):
+for k in range(1, maxk+1):
     fpepq = k*0.01
     line = "%.2f" % fpepq
     for name in names:
@@ -61,4 +73,3 @@ for k in range(1, 101):
         else:
             line += "\t%.4g" % fpepq
     print(line)
-

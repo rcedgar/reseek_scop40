@@ -1,11 +1,10 @@
 #!/bin/bash -e
 
-mkdir -p ../sensitivity_vs_error
-cd ../accuracy_analysis
+mkdir -p ../results
 
-for mode in family sf fold
+for level in sf fold
 do
-	../scripts/sensitivity_vs_error_rate.py `ls *_$mode.txt | grep -v veryfast` \
-	  > ../sensitivity_vs_error/$mode.tsv
-	ls -lh ../sensitivity_vs_error/$mode.tsv
+	./sensitivity_vs_error.py $level \
+	  > ../results/sens_vs_err_$level.tsv
+	ls -lh ../results/sens_vs_err_$level.tsv
 done

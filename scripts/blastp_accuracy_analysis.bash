@@ -3,7 +3,7 @@
 mkdir -p ../accuracy_analysis
 cd ../accuracy_analysis
 
-for mode in family sf fold
+for mode in sf fold
 do
 	out=blastp_$mode.txt
 	sort -gk11 ../blastp_search/blastp.tsv \

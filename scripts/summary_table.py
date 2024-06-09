@@ -2,9 +2,8 @@
 
 import sys
 
-algos = [ "TMalign", "blastp", "foldseek", "DALI" ]
-algos += [ "reseek-veryfast", "reseek-fast", "reseek-sensitive", "reseek-verysensitive" ]
-algos += [ "devreseek-veryfast", "devreseek-fast", "devreseek-sensitive", "devreseek-verysensitive" ]
+algos = [ "TMalign", "blastp", "DALI", "foldseek" ]
+algos += [ "devreseek-fast", "devreeek-sensitive" ]
 bs = [ "sf", "fold" ]
 
 '''
@@ -118,9 +117,8 @@ def print_row(f, b, algo):
 b2short = { "fold" : "fld", "family" : "fam" }
 for b in bs:
     f = open("../results/summary_table_" + b + ".tsv", "w")
-    shortb = b2short[b]
     f.write("Sens0.1_%s\tSens1_%s\tSens10_%s\tSens1FP_%s\tSecs\tMb\tMethod\n" \
-            % (shortb, shortb, shortb, shortb))
+            % (b, b, b, b))
     for algo, _ in list(algo2tpr_at_fpepq0_1_sorted):
         print_row(f, b, algo)
     f.close()

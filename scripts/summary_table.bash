@@ -5,7 +5,7 @@ rm -f ../results/summary_*
 
 ./summary_table.py
 
-for b in sf fold ignore
+for b in sf fold
 do
 	echo === $b ===
 	./columnsl.py ../results/summary_table_$b.tsv \
