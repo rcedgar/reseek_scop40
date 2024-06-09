@@ -1,0 +1,6 @@
+Sens0.1_sf	Sens1_sf	Sens10_sf	Sens1FP_sf	Secs	Mb	Method
+0.0903	0.1078	0.1294	0.1034	127	35.0	blastp
+0.0754	0.1729	0.4365	0.4863	-	-	DALI
+0.1052	0.2244	0.4102	0.3899	78	1823.0	foldseek
+0.1151	0.2373	0.4181	0.4472	-	-	TMalign
+0.1586	0.2699	0.4172	0.3944	68	319.0	devreseek-fast
