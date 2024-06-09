@@ -20,4 +20,4 @@ tpr_at_fpepq1=0.1078
 tpr_at_fpepq10=0.1294
 nrtps_to_firstfp=47015
 sens_to_firstfp=0.1034
-SEPQ0.1=0.0903	SEPQ1=0.1078	SEPQ10=0.1294	S1FP=0.1034	level=sf
+SEPQ0.1=0.0903	SEPQ1=0.1078	SEPQ10=0.1294	S1FP=0.1034	N1FP=47015	level=sf

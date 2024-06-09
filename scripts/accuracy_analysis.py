@@ -9,7 +9,7 @@ se = sys.argv[4]
 level = sys.argv[5]
 
 assert se == "s" or se == "e" # score or E-value
-assert level == "sf" or level == "fold" or level == "ignore"
+assert level == "family" or level == "sf" or level == "fold" or level == "ignore"
 
 if se == 's':
     low_score = -1
@@ -43,10 +43,13 @@ def score1_is_better(score1, score2):
         assert False
 
 doms = set()
+fams = set()
 sfs = set()
 folds = set()
+fam2doms = {}
 sf2doms = {}
 fold2doms = {}
+dom2fam = {}
 dom2sf = {}
 dom2fold = {}
 for line in open("../data/scop_lookup.fix.tsv"):
@@ -57,11 +60,18 @@ for line in open("../data/scop_lookup.fix.tsv"):
     assert dom not in doms
     doms.add(dom)
 
+    fam = scopid
     sf = getsf(scopid)
     fold = getfold(scopid)
 
+    dom2fam[dom] = scopid
     dom2sf[dom] = sf
     dom2fold[dom] = fold
+
+    if not fam in fams:
+        fam2doms[fam] = []
+        fams.add(fam)
+    fam2doms[fam].append(dom)
 
     if not sf in sfs:
         sf2doms[sf] = []
@@ -73,6 +83,10 @@ for line in open("../data/scop_lookup.fix.tsv"):
         folds.add(fold)
     fold2doms[fold].append(dom)
 
+fam2size = {}
+for fam in fams:
+    fam2size[fam] = len(fam2doms[fam])
+
 sf2size = {}
 for sf in sfs:
     sf2size[sf] = len(sf2doms[sf])
@@ -81,7 +95,7 @@ fold2size = {}
 for fold in folds:
     fold2size[fold] = len(fold2doms[fold])
 
-# Possible nr TPs for a domain is all family members except self-hit
+# Possible nr TPs for a domain is all fam members except self-hit
 nrdoms = len(doms)
 
 # Number of alignments minus trivial self-alignments
@@ -90,7 +104,19 @@ nrpairs = nrdoms*nrdoms - nrdoms
 NT = 0 # total possible TPs
 dom2nrpossibletps = {}
 
-if level == "sf":
+if level == "family":
+    nrsingletons = 0 # nr singleton domains (no possible non-trivial TPs)
+    for dom in doms:
+        fam = dom2fam[dom]
+        famsize = fam2size[fam]
+        assert famsize > 0
+        if famsize == 1:
+            nrsingletons += 1
+        dom2nrpossibletps[dom] = famsize - 1
+        NT += famsize - 1
+    NF = nrpairs - NT # total possible FPs
+
+elif level == "sf":
     nrsingletons = 0 # nr singleton domains (no possible non-trivial TPs)
     for dom in doms:
         sf = dom2sf[dom]
@@ -152,8 +178,10 @@ qs = []
 ts = []
 qdoms = []
 tdoms = []
-qfams = []
-tfams = []
+# qfams = []
+# tfams = []
+qsfs = []
+tsfs = []
 tps = []
 
 ntp = 0 # accumulated nr of TP hits
@@ -184,15 +212,18 @@ for line in sys.stdin:
             assert False
 
     prev_line = line
+
     qdom = q
     tdom = t
-    try:
-        qsf = dom2sf[q]
-        tsf = dom2sf[t]
-    except:
-        continue
+  
+    qsf = dom2sf[q]
+    tsf = dom2sf[t]
 
-    if level == "sf":
+    if level == "family":
+        qfam = dom2fam[q]
+        tfam = dom2fam[t]
+        tp = (qfam == tfam)
+    elif level == "sf":
         tp = (qsf == tsf)
     elif level == "fold":
         qfold = dom2fold[qdom]
@@ -213,8 +244,8 @@ for line in sys.stdin:
     qdoms.append(qdom)
     tdoms.append(tdom)
 
-    qfams.append(qsf)
-    tfams.append(tsf)
+    # qfams.append(qsf)
+    # tfams.append(tsf)
     tps.append(tp)
     if tp:
         ntp += 1

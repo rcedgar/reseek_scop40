@@ -2,7 +2,7 @@
 
 Doms = set()
 DomToFam = {}
-for Line in open("../data/scop_lookup.tsv"):
+for Line in open("../data/scop_lookup.fix.tsv"):
     Fields = Line[:-1].split('\t')
     assert len(Fields) == 2
     Dom = Fields[0]

@@ -3,9 +3,9 @@
 mkdir -p ../accuracy_analysis
 cd ../accuracy_analysis
 
-for algo in veryfast fast sensitive verysensitive
+for algo in fast sensitive
 do
-	for mode in sf fold
+	for mode in family sf fold
 	do
 		out=devreseek-${algo}_$mode.txt
 		sort -gk1 ../devreseek_search/dev$algo.tsv \
