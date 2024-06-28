@@ -3,12 +3,8 @@
 mkdir -p ../devreseek_search
 cd ../devreseek_search
 
-for mode in veryfast fast sensitive
-do
-	/bin/time -v -o dev$mode.time \
-		$src/reseek/bin/reseek \
-		  -search ../reseek_db/scop40.cal \
-		  -$mode \
-		  -output dev$mode.tsv \
-		  -log dev$mode.search.log
-done
+/bin/time -v -o devreseek.time \
+	$src/reseek/bin/reseek \
+	  -search ../reseek_db/scop40.cal \
+	  -output devreseek.tsv \
+	  -log devreseek.search.log
