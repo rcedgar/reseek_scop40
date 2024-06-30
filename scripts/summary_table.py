@@ -2,7 +2,7 @@
 
 import sys
 
-algos = [ "TMalign", "GTalign", "blastp", "DALI", "foldseek", "devreseek-fast" ]
+algos = [ "TMalign", "GTalign", "blastp", "DALI", "foldseek", "devreseek", "devreseek-fast" ]
 bs = [ "sf", "fold" ]
 
 '''
@@ -34,15 +34,13 @@ algo2sm = {}
 algo2sm["blastp"] = get_secs_memmb("../blastp_search/blastp_search.time")
 algo2sm["foldseek"] = get_secs_memmb("../foldseek_search/foldseek_search.time")
 
-algo2sm["reseek-veryfast"] = get_secs_memmb("../reseek_search/veryfast.time")
-algo2sm["reseek-fast"] = get_secs_memmb("../reseek_search/fast.time")
-algo2sm["reseek-sensitive"] = get_secs_memmb("../reseek_search/sensitive.time")
-algo2sm["reseek-verysensitive"] = get_secs_memmb("../reseek_search/verysensitive.time")
+##algo2sm["reseek-veryfast"] = get_secs_memmb("../reseek_search/veryfast.time")
+##algo2sm["reseek-fast"] = get_secs_memmb("../reseek_search/fast.time")
+##algo2sm["reseek-sensitive"] = get_secs_memmb("../reseek_search/sensitive.time")
+##algo2sm["reseek-verysensitive"] = get_secs_memmb("../reseek_search/verysensitive.time")
 
-algo2sm["devreseek-veryfast"] = get_secs_memmb("../devreseek_search/devveryfast.time")
-algo2sm["devreseek-fast"] = get_secs_memmb("../devreseek_search/devfast.time")
-algo2sm["devreseek-sensitive"] = get_secs_memmb("../devreseek_search/devsensitive.time")
-algo2sm["devreseek-verysensitive"] = get_secs_memmb("../devreseek_search/devverysensitive.time")
+algo2sm["devreseek-fast"] = get_secs_memmb("../devreseek_search/devreseek-fast.time")
+algo2sm["devreseek"] = get_secs_memmb("../devreseek_search/devreseek.time")
 # print(algo2sm)
 # print(algo2sm["reseek-sensitive"])
 

@@ -15,7 +15,7 @@ elif level == "fold":
 else:
     assert False, "Bad level=" + level
 
-methods = [ "blastp", "DALI", "TMalign", "GTalign", "foldseek", "devreseek-fast" ]
+methods = [ "blastp", "DALI", "TMalign", "GTalign", "foldseek", "devreseek", "devreseek-fast" ]
 
 '''
 NrDoms=11211 # number of domains
