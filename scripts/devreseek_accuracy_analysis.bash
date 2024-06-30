@@ -9,5 +9,18 @@ do
 	sort -gk1 ../devreseek_search/devreseek.tsv \
 	  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
 	  > $out
-	ls -lh $out
+	if [ $mode == sf ] ; then
+		grep -H ^SEPQ $out
+	fi
+done
+
+for mode in sf fold
+do
+	out=devreseekfast_$mode.txt
+	sort -gk1 ../devreseek_search/devreseekfast.tsv \
+	  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
+	  > $out
+	if [ $mode == sf ] ; then
+		grep -H ^SEPQ $out
+	fi
 done

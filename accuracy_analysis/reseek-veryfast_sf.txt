@@ -1,0 +1,4 @@
+nrdoms=11211 # number of domains
+nrsingletons=838 # number of singleton domains
+NT=454766 # total possible TPs
+NF=125220544 # total possible FPs
