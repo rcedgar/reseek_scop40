@@ -4,5 +4,5 @@ Sens0.1_fold	Sens1_fold	Sens10_fold	Sens1FP_fold	Secs	Mb	Method
 0.0810	0.1745	0.2962	0.2335	78	1823.0	foldseek
 0.1012	0.2084	0.4357	0.3378	-	-	TMalign
 0.1042	0.2078	0.4218	0.3231	-	-	GTalign
-0.1055	0.1561	0.1987	0.1725	31	221.0	devreseek
-0.1113	0.1799	0.2879	0.2397	101	286.0	devreseek-sensitive
+0.1093	0.1581	0.2155	0.1844	40	256.0	devreseek
+0.1163	0.1806	0.2907	0.2437	144	305.0	devreseek-sensitive
