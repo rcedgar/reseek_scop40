@@ -4,5 +4,5 @@ Sens0.1_sf	Sens1_sf	Sens10_sf	Sens1FP_sf	Secs	Mb	Method
 0.1052	0.2244	0.4102	0.3899	78	1823.0	foldseek
 0.1151	0.2373	0.4181	0.4472	-	-	TMalign
 0.1180	0.2424	0.4198	0.4418	-	-	GTalign
-0.1602	0.2668	0.3857	0.3494	43	277.0	devreseek
-0.1589	0.2590	0.4184	0.3985	139	302.0	devreseek-sensitive
+0.1602	0.2668	0.3857	0.3494	47	272.0	devreseek
+0.1589	0.2590	0.4184	0.3985	147	307.0	devreseek-sensitive
