@@ -18,8 +18,8 @@ done
 
 for mode in sf fold
 do
-	out=devreseek-fast_$mode.txt
-	sort -gk1 ../devreseek_search/devreseek-fast.tsv \
+	out=devreseek-sensitive_$mode.txt
+	sort -gk1 ../devreseek_search/devreseek-sensitive.tsv \
 	  | python3 ../scripts/accuracy_analysis.py 2 3 1 e $mode \
 	  > $out
 	if [ $mode == sf ] ; then

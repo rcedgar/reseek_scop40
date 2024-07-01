@@ -22,11 +22,11 @@ rm -f *devreseek*
 	  -output devreseek.tsv \
 	  -log devreseek.search.log
 
-/bin/time -v -o devreseek-fast.time \
+/bin/time -v -o devreseek-sensitive.time \
 	$reseek \
 	  -search ../reseek_db/scop40.bca \
 	  -db ../reseek_db/scop40.bca \
-	  -fast \
+	  -sensitive \
 	  -evalue 10 \
-	  -output devreseek-fast.tsv \
-	  -log devreseek-fast.search.log
+	  -output devreseek-sensitive.tsv \
+	  -log devreseek-sensitive.search.log
