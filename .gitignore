@@ -6,7 +6,6 @@ blast_binaries/
 foldseek_search/
 gtalign_output/
 bin/
-reseek_db/
 foldseek_db/
 blastp_search/
 blastdb/
