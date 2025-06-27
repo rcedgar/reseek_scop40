@@ -11,3 +11,7 @@ blastp_search/
 blastdb/
 foldseek_tmp/
 gtalign_v0.15.0/
+*.tmp
+tmp/
+big*
+__pycache__/
